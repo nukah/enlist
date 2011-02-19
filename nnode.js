@@ -3,7 +3,7 @@ var express = require('express'),
     mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
-mongoose.connect('mongodb://192.168.1.5/notik');
+mongoose.connect('mongodb://four.eye.rs:27017/notik');
 
 var noteSchema = new Schema({
 	added : Date,
