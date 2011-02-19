@@ -6,6 +6,7 @@ html(lang="ru")
 	body
 		h1 Notik updates list
 		b \Amount: #{count}
-
+		- if (error)
+			#error #{error}
 		#contents
 		#items!= partial('item', list)		

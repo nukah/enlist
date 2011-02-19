@@ -23,6 +23,7 @@ mongoose.model('notebook',noteSchema, 'notebooks');
 
 var m = mongoose.model('notebook');
 app.get('/', function(err, res) {
+	if(err) res.render('t', locals : { error : err } );
 	m.find({}, function(err, result) {
 		if(err) console.log(err);
 		result.sort('doc.added', -1);
