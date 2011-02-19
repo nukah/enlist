@@ -43,7 +43,12 @@ body {
 	color: red;
 	font-size: 1.5em;
 	font-weight: bold;
-	border-bottom: 1px dotted;
-	border-bottom-color: #000000;
+	border: 1px solid;
+	margin: 10px 0px;
+	padding: 5px 10px 5px 10px;
+	background-repeat: no-repeat;
+	background-position: 10px center;
+	background-color: #ffbaba;
+	width: 100px;
 }
 	
