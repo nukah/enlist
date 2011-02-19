@@ -22,7 +22,7 @@ app.use(express.staticProvider(__dirname));
 mongoose.model('notebook',noteSchema, 'notebooks');
 
 var m = mongoose.model('notebook');
-app.get('/', function(req, res) {
+app.get('/', function(err, res) {
 	m.find({}, function(err, result) {
 		if(err) console.log(err);
 		result.sort('doc.added', -1);
@@ -30,7 +30,7 @@ app.get('/', function(req, res) {
 		result.forEach(function(item) {
 			roster.push(item.doc);
 		});
-		res.render('t', { locals : { list : roster }, layout : false });
+		res.render('t', { locals : { list : roster, count : result.length }, layout : false });
 	});
 });
 
