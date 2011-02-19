@@ -2,11 +2,10 @@ html(lang="ru")
 	head
 		title Notik updates
 		link(rel: 'stylesheet', 'href='style.css')
-		link(href : 'http://fonts.googleapis.com/css?family=PT+Sans+Narrow&subset=cyrillic,latin', rel : 'stylesheet', type : 'text/css')
+		link(href : 'http://fonts.googleapis.com/css?family=Ubuntu&subset=cyrillic,latin', rel : 'stylesheet', type : 'text/css')
 	body
 		h1 Notik updates list
 		b \Amount: #{count}
 		- if (error)
 			#error #{error}
-		#contents
 		#items!= partial('item', list)		

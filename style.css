@@ -1,10 +1,21 @@
 body {
-	font-family: 'PT Sans Narrow', arial, serif;
+	font-family: 'Ubuntu', arial, serif;
 	margin: 10px 20% 10px 20%;
+background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.18, rgb(167,182,155)),
+    color-stop(0.59, rgb(201,219,186))
+);
+background-image: -moz-linear-gradient(
+    center bottom,
+    rgb(167,182,155) 18%,
+    rgb(201,219,186) 59%
+);
 }
 #items {
 	width: 60%;
-	background-color: fafafa;
 	border: 2px solid black;
 	-moz-border-radius: 10px;
 	-moz-box-sizing: content-box;
@@ -15,15 +26,29 @@ body {
 	box-shadow: 0px 10px 15px #333333;
 	border-radius: 10px;
 	padding: 10px 10px 10px 10px;
+background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0, rgb(115,101,95)),
+    color-stop(0.5, rgb(150,132,124))
+);
+background-image: -moz-linear-gradient(
+    center bottom,
+    rgb(115,101,95) 0%,
+    rgb(150,132,124) 50%
+);
+
 }
 .item {
-	background-color: #CFCFCF;
-	border: 2px dotted black;
+	background-color: #eeeeee;
+	border: 1px dotted black;
 	padding: 5px;
+	margin-bottom: 15px;
 	font-size: 1em;
 }
-.item p { 
-	font-weight: bold;
+.item #time {
+	color: #850000;
 }
 #complectations .complectationname {
 	color: #ff0084;

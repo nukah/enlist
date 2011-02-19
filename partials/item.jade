@@ -3,8 +3,8 @@
     #{item.name}
   p \Добавлено: 
     - var n = new Date(item.added)
-    #{item.added}
+    #time #{item.added}
   p \Вес: 
     #{item.weight}
   #complectations!= partial('complectation', item.complectations)
-\|
+
