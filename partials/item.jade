@@ -3,8 +3,7 @@
     #{item.name}
   p \Добавлено: 
     - var n = new Date(item.added)
-    #{n.getDay()}/#{n.getMonth()}/#{n.getFullYear()}
-    #{n.getHours()}:#{n.getMinutes()}
+    #{item.added}
   p \Вес: 
     #{item.weight}
   #complectations!= partial('complectation', item.complectations)
