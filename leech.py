@@ -53,21 +53,3 @@ for item in list:
             complectations.append(complect)
         new['complectations'] = complectations
         q.insert(new)
-
-    else:
-        if timedelta(days = -3) > datetime.now() - notebook['added']:
-            q.update ({'_id' : notebook['_id']}, { '$set' : {'complectations': {}}})
-            complectations = []
-            optionList = item.findAll('tr', 'noteComplectation')
-            for option in optionList:
-                complect = {}
-                complect['name'] = ''.join(comp.find('td', 'cell1').findAll('div')[1].findAll('strong')[1].string.split('.'))
-                complect['processor_type'] = comp.find('td', 'cell2').find('strong').string
-                complect['processor_speed'] = comp.find('td', 'cell2').find('strong').nextSibling.nextSibling.split()[0]
-                complect['memory_amount'] = ''.join(hard_pattern.search(comp.find('td', 'cell3').find('strong').string).group(1))
-                complect['harddrive'] = hard_pattern.search(comp.find('td', 'cell4').find('strong').string).group(0)
-                complect['videocard'] = comp.find('td', 'cell6').find('strong').string
-                complect['screensize'] = comp.find('td', 'cell8').find('strong').string
-                complect['price'] = ''.join(price_pattern.search(comp.find('td', 'cell10').find('span').string).groups())
-                complectations.append(complect)
-            q.update({'_id' : notebook['_id']}, { '$set' : {'complectations' : complectations}, '$set' : {'modified' : datetime.now(MSK).strftime('[ %d/%m/%Y ] -> %H:%M:%S')}})
