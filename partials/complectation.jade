@@ -1,5 +1,5 @@
 p 
-  .complectationname #{complectation.name}
+  .complectationname a(href: complectation.link) #{complectation.name}
   .comp processor: 	
   | #{complectation.processor_type} (#{complectation.processor_speed})
   .comp memory:

@@ -8,6 +8,7 @@ mongoose.connect('mongodb://localhost/notik');
 /* SCHEMA DEFINE */
 var noteSchema = new Schema({
 	added : String,
+    added_dt : Date,
 	name : String,
 	weight : String,
 	modified : String,
@@ -21,7 +22,7 @@ app.set('view engine', 'jade');
 app.set('view options', { layout : false});
 app.use(express.staticProvider(__dirname));
 
-mongoose.model('notebook',noteSchema, 'notebooks');
+mongoose.model('notebook', noteSchema, 'notebooks1');
 
 var m = mongoose.model('notebook');
 
@@ -31,7 +32,7 @@ app.get('/', function(req, res) {
 		if(err) {
 			res.render('t', { locals : { error : err } });
 		}
-		result.sort('doc.added', -1);
+		result.sort('doc.added_dt', -1);
 		var roster = [];
 		result.forEach(function(item) {
 			roster.push(item.doc);
